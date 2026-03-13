@@ -1,0 +1,12 @@
+{
+  "name": "pet-grooming",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run server --prefix backend\" \"npm run dev --prefix frontend\"",
+    "server": "node server.js --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
