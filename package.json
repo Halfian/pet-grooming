@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"npm run server --prefix backend\" \"npm run dev --prefix frontend\"",
-    "server": "node server.js --prefix backend"
+    "server": "npm run start --prefix backend",
+    "client": "npm run dev --prefix frontend"
   },
   "devDependencies": {
     "concurrently": "^9.2.1"
