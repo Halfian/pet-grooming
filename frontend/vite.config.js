@@ -6,6 +6,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: '/pet-grooming/',
+  build: {
+    outDir: 'dist'
+  },
   server: {
     proxy: {
       "/services": "http://localhost:5000",
