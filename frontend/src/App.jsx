@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import Home from "./pages/Home";
 import Login from "./Login"; 
@@ -34,7 +34,7 @@ function App() {
     }`;
 
   return (
-    <Router>
+    <>
       {/* Navigation Bar */}
       <nav className="fixed top-0 left-0 w-full bg-gradient-to-r from-pink-300 to-yellow-200 shadow-md z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -93,7 +93,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Home />} /> {/* fallback */}
       </Routes>
-    </Router>
+    </>
   )
 }
 
