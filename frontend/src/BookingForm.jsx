@@ -14,7 +14,7 @@ export default function BookingForm({ onBookingCreated }) {
 
     // Helper to get token once
     const token = localStorage.getItem("token");
-    const authHeader = { Authorization: `Bearer ${token}` };
+    const authHeader = token ? { Authorization: `Bearer ${token}` } : {};
 
     useEffect(() => {
         const fetchData = async () => {
