@@ -10,7 +10,7 @@ export default function Home() {
       {/* Hero Section */}
       <section id="hero" 
         className="h-screen flex flex-col items-center justify-center text-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/cute-wallpaper.jpg')" }}
+        style={{ backgroundImage: "url('/pet-grooming/images/cute-wallpaper.jpg')" }}
       >
         <div className="bg-white/70 p-8 rounded-lg shadow">
           <h1 className="text-4xl font-bold text-gray-800 mt-10 mb-4">
@@ -44,7 +44,7 @@ export default function Home() {
       {/* About Section */}
       <section id="about" 
         className="h-screen flex flex-col items-center justify-center text-center bg-cover bg-center relative"
-        style={{ backgroundImage: "url('/images/pet1.jpg')" }}
+        style={{ backgroundImage: "url('/pet-grooming/images/pet1.jpg')" }}
       >
         {/* Overlay for readability */}
         <div className="absolute inset-0 bg-black/40"></div>
