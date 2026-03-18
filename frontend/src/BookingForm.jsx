@@ -48,7 +48,7 @@ export default function BookingForm({ onBookingCreated }) {
             await api.post("/bookings", formData, { headers: authHeader });
             alert("Booking created successfully!");
             if (onBookingCreated) await onBookingCreated();
-            setFormData({ pet_id: "", service_id: "", booking_date: formData.date });
+            setFormData({ pet_id: "", service_id: "", booking_date: "" });
         } catch (err) {
             console.error("Error creating booking:", err);
             alert(err.response?.data?.error || "Error creating booking");
@@ -114,8 +114,8 @@ export default function BookingForm({ onBookingCreated }) {
                     <label className="block text-gray-700 font-medium mb-2">Date</label>
                     <input
                     type="datetime-local"
-                    name="date"
-                    value={formData.date}
+                    name="booking_date"
+                    value={formData.booking_date}
                     onChange={handleChange}
                     required
                     className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500"
