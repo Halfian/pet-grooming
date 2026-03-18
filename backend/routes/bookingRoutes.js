@@ -8,13 +8,13 @@ router.use(authMiddleware); // Protect all booking routes with authentication
 
 // Customer --- Create booking
 router.post("/", async (req, res) => {
-  const { pet_id, service_id, date } = req.body;
+  const { pet_id, service_id, booking_date } = req.body;
   const user_id = req.user.id; // Comes from JWT
 
   try {
     const result = await pool.query(
-      "INSERT INTO bookings(user_id, pet_id, service_id, date, status) VALUES($1, $2, $3, $4, 'pending') RETURNING *",
-      [user_id, pet_id, service_id, date]
+      "INSERT INTO bookings(user_id, pet_id, service_id, booking_date, status) VALUES($1, $2, $3, $4, 'pending') RETURNING *",
+      [user_id, pet_id, service_id, booking_date]
     );
     res.json(result.rows[0]);
   } catch (err) {
@@ -27,12 +27,12 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const result = await pool.query(
-      `SELECT b.id, b.date, b.status, p.name AS pet_name, s.name AS service_name, s.price
+      `SELECT b.id, b.booking_date, b.status, p.name AS pet_name, s.name AS service_name, s.price
        FROM bookings b
        INNER JOIN pets p ON b.pet_id = p.id
        INNER JOIN services s ON b.service_id = s.id
        WHERE b.user_id = $1
-       ORDER BY b.date ASC`,
+       ORDER BY b.booking_date ASC`,
       [req.user.id]
     );
     res.json(result.rows);
@@ -48,7 +48,7 @@ router.get("/admin", isAdmin, async (req, res) => {
   const validStatuses = ["pending", "completed", "canceled"];
   const validOrders = ["asc", "desc"];
   const sortMap = {
-    date: "b.date",
+    date: "b.booking_date",
     user_name: "u.name",
     pet_name: "p.name",
     service_name: "s.name"
@@ -61,7 +61,7 @@ router.get("/admin", isAdmin, async (req, res) => {
   try {
     let query = `
       SELECT 
-        b.id, b.date, b.status, 
+        b.id, b.booking_date, b.status, 
         u.name AS customer_name, u.phone, 
         p.name AS pet_name, p.type AS pet_type, p.breed AS pet_breed, 
         s.name AS service_name, s.description AS service_description, s.price AS service_price
@@ -77,7 +77,7 @@ router.get("/admin", isAdmin, async (req, res) => {
       params.push(status);
     }
 
-    const sortField = sortMap[sort] || "b.date";
+    const sortField = sortMap[sort] || "b.booking_date";
     const sortOrder = validOrders.includes(order.toLowerCase()) ? order : "asc";
 
     query += ` ORDER BY ${sortField} ${sortOrder} LIMIT $${params.length + 1} OFFSET $${params.length + 2}`;
@@ -129,7 +129,7 @@ router.get("/admin/:user_id", isAdmin, async (req, res) => {
   try {
     const result = await pool.query(`
       SELECT
-        b.id, b.date, b.status, u.name AS customer_name, u.phone, 
+        b.id, b.booking_date, b.status, u.name AS customer_name, u.phone, 
         p.name AS pet_name, p.type AS pet_type, p.breed AS pet_breed, 
         s.name AS service_name, s.description AS service_description, s.price AS service_price
       FROM bookings AS b
@@ -137,7 +137,7 @@ router.get("/admin/:user_id", isAdmin, async (req, res) => {
       INNER JOIN pets AS p ON b.pet_id = p.id
       INNER JOIN services AS s ON b.service_id = s.id
       WHERE b.user_id = $1
-      ORDER BY b.date ASC
+      ORDER BY b.booking_date ASC
     `, [user_id]);
     res.json(result.rows);
   } catch (err) {
@@ -179,7 +179,7 @@ router.put("/admin/:id", isAdmin, async (req, res) => {
   try {
     await pool.query("UPDATE bookings SET status = $1 WHERE id = $2", [status, id]);
     const result = await pool.query(`
-      SELECT b.id, b.date, b.status, u.name AS customer_name, u.phone, 
+      SELECT b.id, b.booking_date, b.status, u.name AS customer_name, u.phone, 
              p.name AS pet_name, p.type AS pet_type, p.breed AS pet_breed, 
              s.name AS service_name, s.description AS service_description, s.price AS service_price
       FROM bookings AS b
