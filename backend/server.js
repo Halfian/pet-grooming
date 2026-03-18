@@ -11,7 +11,10 @@ import { petsRoutes } from "./routes/petsRoutes.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ["https://Halfian.github.io"], // your GitHub Pages domain
+  credentials: true
+}));
 app.use(express.json());
 
 // Public routes
