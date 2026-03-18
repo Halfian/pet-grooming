@@ -183,7 +183,7 @@ function Login() {
                   <td className="border px-4 py-2">{b.pet_name}</td>
                   <td className="border px-4 py-2">{b.service_name}</td>
                   <td className="border px-4 py-2">
-                    {new Date(b.date).toLocaleString()}
+                    {new Date(b.booking_date).toLocaleString()}
                   </td>
                   <td className="border px-4 py-2 text-center">
                     <span
