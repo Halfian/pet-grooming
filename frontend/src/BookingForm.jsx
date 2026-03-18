@@ -32,11 +32,15 @@ export default function BookingForm({ onBookingCreated }) {
     }, []);
 
     const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: name === "date" && value
+            ? new Date(value).toISOString() // ✅ convert to ISO timestamp
+            : value
+        }));
     };
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -44,7 +48,7 @@ export default function BookingForm({ onBookingCreated }) {
             await api.post("/bookings", formData, { headers: authHeader });
             alert("Booking created successfully!");
             if (onBookingCreated) await onBookingCreated();
-            setFormData({ pet_id: "", service_id: "", date: "" });
+            setFormData({ pet_id: "", service_id: "", booking_date: formData.date });
         } catch (err) {
             console.error("Error creating booking:", err);
             alert(err.response?.data?.error || "Error creating booking");
