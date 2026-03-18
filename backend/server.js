@@ -12,7 +12,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: ["https://Halfian.github.io"], // your GitHub Pages domain
+  origin: ["https://halfian.github.io"], // your GitHub Pages domain
   credentials: true
 }));
 app.use(express.json());
