@@ -46,12 +46,12 @@ function App() {
 
           {/* Desktop Links */}
           <div className="hidden md:flex gap-6 text-gray-700 font-medium">
-            <HashLink smooth to="#hero" className="hover:text-pink-600">Home</HashLink>
-            <HashLink smooth to="#services" className="hover:text-pink-600">Services</HashLink>
-            <HashLink smooth to="#gallery" className="hover:text-pink-600">Gallery</HashLink>
-            <HashLink smooth to="#testimonials" className="hover:text-pink-600">Testimonials</HashLink>
-            <HashLink smooth to="#about" className="hover:text-pink-600">About</HashLink>
-            <HashLink smooth to="#contact" className="hover:text-pink-600">Contact</HashLink>
+            <HashLink smooth to="/#hero" className="hover:text-pink-600">Home</HashLink>
+            <HashLink smooth to="/#services" className="hover:text-pink-600">Services</HashLink>
+            <HashLink smooth to="/#gallery" className="hover:text-pink-600">Gallery</HashLink>
+            <HashLink smooth to="/#testimonials" className="hover:text-pink-600">Testimonials</HashLink>
+            <HashLink smooth to="/#about" className="hover:text-pink-600">About</HashLink>
+            <HashLink smooth to="/#contact" className="hover:text-pink-600">Contact</HashLink>
             <Link to="/login" className="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">
               Book Now
               <FaPaw className="inline ml-2" />
@@ -70,12 +70,12 @@ function App() {
           {/* Mobile Drawer */}
         {isOpen && (
           <div className="md:hidden bg-gradient-to-r from-pink-200 to-yellow-100 px-6 py-4 space-y-4">
-            <HashLink smooth to="#hero" onClick={toggleMenu} className="block hover:text-pink-600">Home</HashLink>
-            <HashLink smooth to="#services" onClick={toggleMenu} className="block hover:text-pink-600">Services</HashLink>
-            <HashLink smooth to="#gallery" onClick={toggleMenu} className="block hover:text-pink-600">Gallery</HashLink>
-            <HashLink smooth to="#testimonials" onClick={toggleMenu} className="block hover:text-pink-600">Testimonials</HashLink>
-            <HashLink smooth to="#about" onClick={toggleMenu} className="block hover:text-pink-600">About</HashLink>
-            <HashLink smooth to="#contact" onClick={toggleMenu} className="block hover:text-pink-600">Contact</HashLink>
+            <HashLink smooth to="/#hero" onClick={toggleMenu} className="block hover:text-pink-600">Home</HashLink>
+            <HashLink smooth to="/#services" onClick={toggleMenu} className="block hover:text-pink-600">Services</HashLink>
+            <HashLink smooth to="/#gallery" onClick={toggleMenu} className="block hover:text-pink-600">Gallery</HashLink>
+            <HashLink smooth to="/#testimonials" onClick={toggleMenu} className="block hover:text-pink-600">Testimonials</HashLink>
+            <HashLink smooth to="/#about" onClick={toggleMenu} className="block hover:text-pink-600">About</HashLink>
+            <HashLink smooth to="/#contact" onClick={toggleMenu} className="block hover:text-pink-600">Contact</HashLink>
             <Link
               to="/login"
               onClick={toggleMenu}
