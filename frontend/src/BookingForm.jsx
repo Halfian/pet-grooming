@@ -6,7 +6,7 @@ export default function BookingForm({ onBookingCreated }) {
     const [formData, setFormData] = useState({
         pet_id: "",
         service_id: "",
-        date: ""
+        booking_date: ""
     });
 
     const [pets, setPets] = useState([]);
