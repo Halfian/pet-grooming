@@ -1,10 +1,29 @@
+import { useEffect, useState } from "react";
 import Services from "./Services";
 import Gallery from "./Gallery";
 import Testimonials from "./Testimonials";
 import { Link } from "react-router-dom";
 import { FaCat } from "react-icons/fa6";
+import api from "./api";
 
 export default function Home() {
+  const [services, setServices] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const res = await api.get("/services");
+        setServices(res.data);
+      } catch (err) {
+        console.error("Error fetching services:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchServices();
+  }, [])
+
   return (
     <div className="bg-gray-50">
       {/* Hero Section */}
@@ -30,7 +49,15 @@ export default function Home() {
       </section>
 
       <section id="services" className="min-h-screen p-8 bg-white">
-        <Services />
+        {loading ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[...Array(3)].map((_, i) => (
+              <div key={i} className="animate-pulse bg-gray-200 h-40 rounded-lg"></div>
+            ))}
+          </div>
+        ) : (
+          <Services services={services} />
+        )}
       </section>
 
       <section id="gallery" className="min-h-screen p-8 bg-gray-50">
