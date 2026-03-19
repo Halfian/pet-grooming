@@ -44,7 +44,7 @@ export default function Home() {
       {/* About Section */}
       <section id="about" 
         className="h-screen flex flex-col items-center justify-center text-center bg-cover bg-center relative"
-        style={{ backgroundImage: "url('/pet-grooming/images/pet1.jpg')" }}
+        style={{ backgroundImage: "url('/pet-grooming/images/pet1.webp')" }}
       >
         {/* Overlay for readability */}
         <div className="absolute inset-0 bg-black/40"></div>
