@@ -4,7 +4,7 @@ import Gallery from "./Gallery";
 import Testimonials from "./Testimonials";
 import { Link } from "react-router-dom";
 import { FaCat } from "react-icons/fa6";
-import api from "./api";
+import api from "../api";
 
 export default function Home() {
   const [services, setServices] = useState([]);
