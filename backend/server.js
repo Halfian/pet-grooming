@@ -12,7 +12,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: ["https://halfian.github.io"], // your GitHub Pages domain
+  origin: ["https://halfian.github.io", "http://localhost:5173"], // GitHub Pages domain and local dev server
   credentials: true
 }));
 app.use(express.json());
@@ -25,5 +25,8 @@ app.use("/services", servicesRoutes);
 app.use("/bookings", bookingRoutes);
 app.use("/users", usersRoutes);
 app.use("/pets", petsRoutes);
+
+// Development listening
+app.listen(5000, () => console.log("Server running on port 5000"));
 
 export default app;
