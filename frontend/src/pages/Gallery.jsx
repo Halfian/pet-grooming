@@ -1,3 +1,5 @@
+import { useState, useEffect, use } from "react";
+
 export default function Gallery() {
   const images = [
     { src: "https://media.istockphoto.com/id/1334161469/photo/good-boy-expressing-his-joy-after-grooming.jpg?s=612x612&w=0&k=20&c=_8ElnY8d6jQwtuXrG91ObxG4kk4wwUl8XoMvXgBT1l4=", alt: "Happy dog after grooming" },
@@ -8,6 +10,20 @@ export default function Gallery() {
     { src: "https://seattleareafelinerescue.org/wp-content/uploads/2019/01/Web-graphics-25.jpg", alt: "Playful kitten" },
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  const nextSlide = () =>
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  const prevSlide = () =>
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+
   return (
     <div className="bg-gray-50 min-h-screen py-12 px-6">
       <h1 className="text-3xl font-bold text-center mb-10">Our Gallery</h1>
@@ -15,16 +31,53 @@ export default function Gallery() {
         A glimpse of our happy customers after their grooming sessions.
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {images.map((img, index) => (
-          <div key={index} className="overflow-hidden rounded-lg shadow-lg">
-            <img
-              src={img.src}
-              alt={img.alt}
-              className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-            />
+      {/* Carousel wrapper */}
+      <div className="max-w-3xl mx-auto relative">
+        <div className="overflow-hidden rounded-lg shadow-lg">
+          <div
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {images.map((img, index) => (
+              <div key={index} className="w-full flex-shrink-0">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-64 sm:h-80 md:h-96 object-cover md:object-contain"
+                />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        {/* Navigation buttons */}
+        <div className="flex justify-between mt-6">
+          <button
+            onClick={prevSlide}
+            className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
+          >
+            Prev
+          </button>
+          <button
+            onClick={nextSlide}
+            className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
+          >
+            Next
+          </button>
+        </div>
+
+        {/* Dots indicator */}
+        <div className="flex justify-center mt-4 space-x-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full ${
+                index === currentIndex ? "bg-gray-800" : "bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
