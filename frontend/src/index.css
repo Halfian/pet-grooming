@@ -3,3 +3,17 @@
 html {
   scroll-behavior: smooth;
 }
+
+:root {
+  /* Core colors */
+  --color-pet-primary: #FF7F50;   /* Coral – warm, inviting */
+  --color-pet-secondary: #4CAF50; /* Fresh green – trust, nature */
+  --color-pet-accent: #FFD700;    /* Golden yellow – playful highlights */
+
+  /* Backgrounds */
+  --color-pet-bg: #FDFDFD;        /* Clean light background */
+  --color-pet-card: #FFF8F0;      /* Cream surface for cards */
+
+  /* Text */
+  --color-pet-text: #333333;      /* Dark readable text */
+}
