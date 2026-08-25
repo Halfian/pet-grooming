@@ -4,7 +4,7 @@ const api = axios.create({
     baseURL: 
         import.meta.env.MODE === "development"
         ? "http://localhost:5000"
-        : "https://pet-grooming-neon.vercel.app",
+        : "/api",
     withCredentials: true,  
 })
 

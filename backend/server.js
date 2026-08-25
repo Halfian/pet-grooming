@@ -18,13 +18,15 @@ app.use(cors({
 app.use(express.json());
 
 // Public routes
-app.use("/auth", authRoutes);
-app.use("/services", servicesRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/services", servicesRoutes);
 
 // Protected routes
-app.use("/bookings", bookingRoutes);
-app.use("/users", usersRoutes);
-app.use("/pets", petsRoutes);
+app.use("/api/bookings", bookingRoutes);
+app.use("/api/users", usersRoutes);
+app.use("/api/pets", petsRoutes);
+
+app.get("/api", (req, res) => res.json({ status: "Backend is online!" }));
 
 // Development listening
 app.listen(5000, () => console.log("Server running on port 5000"));
