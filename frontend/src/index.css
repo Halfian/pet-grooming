@@ -6,14 +6,36 @@ html {
 
 :root {
   /* Core colors */
-  --color-pet-primary: #FF7F50;   /* Coral – warm, inviting */
-  --color-pet-secondary: #4CAF50; /* Fresh green – trust, nature */
-  --color-pet-accent: #FFD700;    /* Golden yellow – playful highlights */
+  --color-primary: #114D4F;  /* Deep forest teal for a look of high authority and trust */
+  --color-secondary: #0284C7; /* Fresh green – trust, nature */
+  --color-accent: #64C2B7;    /* Bright seafoam mint for primary booking buttons */
 
   /* Backgrounds */
-  --color-pet-bg: #FDFDFD;        /* Clean light background */
-  --color-pet-card: #FFF8F0;      /* Cream surface for cards */
+  --color-bg: #F4F9F9;       /* Clean light background */
+  --color-card: #FFF8F0;      /* Cream surface for cards */
 
   /* Text */
-  --color-pet-text: #333333;      /* Dark readable text */
+  --color-text: #1A2425;      /* Dark slate for legible paragraphs */
 }
+
+/*  --color-brand-bg: #F4F9F9;       / Fresh icy-white/mint background /
+  --color-brand-primary: #1H4D4F;  / Deep forest teal for a look of high authority and trust /
+  --color-brand-accent: #64C2B7;   / Bright seafoam mint for primary booking buttons /
+  --color-brand-dark: #1A2425;     / Dark slate for legible paragraphs 
+*/
+
+/* --color-brand-bg: #F8FAFC;       /* Clean clinical gray-blue background /
+  --color-brand-primary: #1E1B4B;  /* Midnight deep indigo for primary branding /
+  --color-brand-accent: #6366F1;   /* Vibrant digital purple-blue for active states and badges /
+  --color-brand-dark: #0F172A;     /* Slate-900 for modern corporate-level text contrast 
+*/
+
+  /* --color-primary: #FF7F50;   /* Coral – warm, inviting /
+  --color-secondary: #4CAF50; /* Fresh green – trust, nature /
+  --color-accent: #FFD700;    /* Golden yellow – playful highlights /
+  /* Backgrounds /
+  --color-bg: #FDFDFD;        /* Clean light background /
+  --color-card: #FFF8F0;      /* Cream surface for cards /
+  /* Text /
+  --color-text: #333333;      /* Dark readable text 
+*/

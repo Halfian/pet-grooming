@@ -7,10 +7,10 @@ import { FaPaw } from "react-icons/fa";
 // Skeleton loader component
 function ServiceSkeleton() {
   return (
-    <div className="bg-white rounded-xl shadow-md p-6 animate-pulse">
-      <div className="h-6 w-32 bg-gray-300 rounded mb-4 mx-auto"></div>
-      <div className="h-4 w-48 bg-gray-200 rounded mb-2 mx-auto"></div>
-      <div className="h-4 w-24 bg-gray-200 rounded mx-auto"></div>
+    <div className="bg-[var(--color-bg)] rounded-xl shadow-md p-6 animate-pulse">
+      <div className="h-6 w-32 bg-[var(--color-text)]/30 rounded mb-4 mx-auto"></div>
+      <div className="h-4 w-48 bg-[var(--color-text)]/20 rounded mb-2 mx-auto"></div>
+      <div className="h-4 w-24 bg-[var(--color-text)]/20 rounded mx-auto"></div>
     </div>
   );
 }
@@ -19,20 +19,20 @@ function ServiceSkeleton() {
 const ServiceCard = memo(({ service, icon }) => (
   <div
     key={service.id}
-    className="bg-white text-center rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition duration-300"
+    className="bg-[var(--color-bg)] text-center rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition duration-300"
   >
-    <div className="flex items-center justify-center gap-2 bg-gradient-to-r from-pink-400 to-yellow-300 p-4">
+    <div className="flex items-center justify-center gap-2 bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-accent)] p-4">
       {icon}
-      <h3 className="text-xl font-bold text-white">{service.name}</h3>
+      <h3 className="text-xl font-bold text-[var(--color-card)]">{service.name}</h3>
     </div>
     <div className="p-6">
-      <p className="text-gray-700 text-lg italic mb-4">{service.description}</p>
-      <p className="text-gray-700 mb-4">
+      <p className="text-[var(--color-text)] text-lg italic mb-4">{service.description}</p>
+      <p className="text-[var(--color-text)] mb-4">
         Price: <span className="font-semibold">${Number(service.price).toFixed(2)}</span>
       </p>
       <Link
         to="/login"
-        className="bg-pink-600 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-700 transition"
+        className="bg-[var(--color-primary)] text-[var(--color-card)] px-4 py-2 rounded-lg shadow hover:bg-[var(--color-secondary)] transition"
       >
         Book Now
       </Link>
@@ -45,9 +45,9 @@ export default function Services() {
   const [loading, setLoading] = useState(true);
 
   const serviceIcons = {
-    "Full Grooming": <ScissorsIcon className="h-6 w-6 text-white" />,
-    "Spa Treatment": <SparklesIcon className="h-6 w-6 text-white" />,
-    "Nail Trim": <FaPaw className="h-6 w-6 text-white" />,
+    "Full Grooming": <ScissorsIcon className="h-6 w-6 text-[var(--color-card)]" />,
+    "Spa Treatment": <SparklesIcon className="h-6 w-6 text-[var(--color-card)]" />,
+    "Nail Trim": <FaPaw className="h-6 w-6 text-[var(--color-card)]" />,
   };
 
   useEffect(() => {
@@ -62,9 +62,9 @@ export default function Services() {
   }, []);
 
   return (
-    <div className="bg-gray-50 min-h-screen py-12 px-6">
+    <div className="bg-[var(--color-text)]/50 min-h-screen py-12 px-6">
       <h1 className="text-3xl font-bold text-center mb-10">Our Services</h1>
-      <p className="text-center text-gray-600 mb-12">
+      <p className="text-center text-[var(--color-text)] mb-12">
         Choose from our professional grooming options to keep your pets happy and healthy.
       </p>
 
@@ -76,7 +76,7 @@ export default function Services() {
               <ServiceCard
                 key={service.id}
                 service={service}
-                icon={serviceIcons[service.name] || <FaPaw className="h-6 w-6 text-white" />}
+                icon={serviceIcons[service.name] || <FaPaw className="h-6 w-6 text-[var(--color-card)]" />}
               />
             ))}
       </div>

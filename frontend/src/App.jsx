@@ -29,30 +29,33 @@ function App() {
   }, []);
 
   const linkClass = (id) => 
-    `hover:text-pink-600 ${
-      activeSection === id ? "text-pink-600 font-semibold" : "text-gray-700"
+    `hover:text-[var(--color-accent)] ${
+      activeSection === id ? "text-[var(--color-primary)] font-semibold" : "text-[var(--color-card)]"
     }`;
 
   return (
     <>
       {/* Navigation Bar */}
-      <nav className="fixed top-0 left-0 w-full bg-gradient-to-r from-pink-300 to-yellow-200 shadow-md z-50">
+      <nav className="fixed top-0 left-0 w-full bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-accent)] shadow-lg z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           {/* Logo */}
-          <div className="text-xl font-bold text-gray-800">
-            <FaPaw className="inline text-pink-600 mr-2" />
+          <div className="text-xl font-bold text-[var(--color-bg)]">
+            <FaPaw className="inline text-[var(--color-accent)] mr-2" />
             Pet Grooming
           </div>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex gap-6 text-gray-700 font-medium">
-            <HashLink smooth to="/#hero" className="hover:text-pink-600">Home</HashLink>
-            <HashLink smooth to="/#services" className="hover:text-pink-600">Services</HashLink>
-            <HashLink smooth to="/#gallery" className="hover:text-pink-600">Gallery</HashLink>
-            <HashLink smooth to="/#testimonials" className="hover:text-pink-600">Testimonials</HashLink>
-            <HashLink smooth to="/#about" className="hover:text-pink-600">About</HashLink>
-            <HashLink smooth to="/#contact" className="hover:text-pink-600">Contact</HashLink>
-            <Link to="/login" className="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">
+          <div className="hidden md:flex gap-6 text-[var(--color-card)] font-medium">
+            <HashLink smooth to="/#hero" className={linkClass("hero")}>Home</HashLink>
+            <HashLink smooth to="/#services" className={linkClass("services")}>Services</HashLink>
+            <HashLink smooth to="/#gallery" className={linkClass("gallery")}>Gallery</HashLink>
+            <HashLink smooth to="/#testimonials" className={linkClass("testimonials")}>Testimonials</HashLink>
+            <HashLink smooth to="/#about" className={linkClass("about")}>About</HashLink>
+            <HashLink smooth to="/#contact" className={linkClass("contact")}>Contact</HashLink>
+            <Link to="/login" 
+                className="bg-gradient-to-b from-[var(--color-secondary)] to-[var(--color-primary)] 
+                  text-[var(--color-card)] px-4 py-2 rounded hover:bg-gradient-to-b hover:from-[var(--color-primary)] 
+                  hover:to-[var(--color-secondary)] transition duration-300">
               Book Now
               <FaPaw className="inline ml-2" />
             </Link>
@@ -60,7 +63,7 @@ function App() {
 
           {/* Mobile Hamburger */}
           <button
-            className="md:hidden text-gray-800 cursor-pointer focus:outline-none"
+            className="md:hidden text-[var(--color-text)] font-bold cursor-pointer focus:outline-none"
             onClick={toggleMenu}
           >
             {isOpen ? "✕" : "☰"}
@@ -69,17 +72,19 @@ function App() {
 
           {/* Mobile Drawer */}
         {isOpen && (
-          <div className="md:hidden bg-gradient-to-r from-pink-200 to-yellow-100 px-6 py-4 space-y-4">
-            <HashLink smooth to="/#hero" onClick={toggleMenu} className="block hover:text-pink-600">Home</HashLink>
-            <HashLink smooth to="/#services" onClick={toggleMenu} className="block hover:text-pink-600">Services</HashLink>
-            <HashLink smooth to="/#gallery" onClick={toggleMenu} className="block hover:text-pink-600">Gallery</HashLink>
-            <HashLink smooth to="/#testimonials" onClick={toggleMenu} className="block hover:text-pink-600">Testimonials</HashLink>
-            <HashLink smooth to="/#about" onClick={toggleMenu} className="block hover:text-pink-600">About</HashLink>
-            <HashLink smooth to="/#contact" onClick={toggleMenu} className="block hover:text-pink-600">Contact</HashLink>
+          <div className="md:hidden bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-accent)] text-[var(--color-card)] px-6 py-4 space-y-4">
+            <HashLink smooth to="/#hero" onClick={toggleMenu} className="block hover:text-[var(--color-text)] transition duration-300">Home</HashLink>
+            <HashLink smooth to="/#services" onClick={toggleMenu} className="block hover:text-[var(--color-text)] transition duration-300">Services</HashLink>
+            <HashLink smooth to="/#gallery" onClick={toggleMenu} className="block hover:text-[var(--color-text)] transition duration-300">Gallery</HashLink>
+            <HashLink smooth to="/#testimonials" onClick={toggleMenu} className="block hover:text-[var(--color-text)] transition duration-300">Testimonials</HashLink>
+            <HashLink smooth to="/#about" onClick={toggleMenu} className="block hover:text-[var(--color-text)] transition duration-300">About</HashLink>
+            <HashLink smooth to="/#contact" onClick={toggleMenu} className="block hover:text-[var(--color-text)] transition duration-300">Contact</HashLink>
             <Link
               to="/login"
               onClick={toggleMenu}
-              className="block bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700"
+              className="block bg-gradient-to-b from-[var(--color-secondary)] to-[var(--color-accent)] 
+                  text-[var(--color-card)] px-4 py-2 rounded hover:bg-gradient-to-b hover:from-[var(--color-accent)] 
+                  hover:to-[var(--color-secondary)] transition duration-300"
             >
               Book Now
             </Link>
