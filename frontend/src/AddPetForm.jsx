@@ -59,7 +59,7 @@ export default function AddPetForm({ onPetAdded }) {
       {/* ✅ Submit button */}
       <button
         type="submit"
-        className="w-full bg-green-600 text-white mb-5 py-2 rounded hover:bg-green-700"
+        className="w-full bg-[var(--color-accent)] text-[var(--color-card)] mb-5 py-2 rounded hover:bg-[var(--color-accent)]"
       >
         Add Pet
       </button>

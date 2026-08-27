@@ -77,7 +77,7 @@ function Login() {
   if (!user) {
     // Render login/signup form
     return (
-      <div className="max-w-md mx-auto mt-32 p-6 bg-white shadow rounded">
+      <div className="max-w-md mx-auto mt-32 p-6 bg-[var(--color-bg)] shadow rounded">
         <h1 className="text-2xl font-bold mb-4 text-center">
           {isSignup ? "Sign Up" : "Login"}
         </h1>
@@ -103,31 +103,31 @@ function Login() {
               type={showPassword ? "text" : "password"}
               name="password"
               placeholder="Password"
-              className="w-full border rounded px-3 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-pink-500"
+              className="w-full border rounded px-3 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
               required
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-2.5 text-gray-500 hover:text-pink-600 focus:outline-none"
+              className="absolute right-3 top-2.5 text-[var(--color-text)] hover:text-[var(--color-accent)] focus:outline-none"
             >
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </button>
           </div>
           <button
             type="submit"
-            className="w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700"
+            className="w-full bg-[var(--color-secondary)] text-[var(--color-card)] py-2 rounded hover:bg-pink-700"
           >
             {isSignup ? "Sign Up" : "Login"}
           </button>
         </form>
-        <p className="mt-4 text-center text-sm text-gray-600">
+        <p className="mt-4 text-center text-sm text-[var(--color-text)]">
           {isSignup ? (
             <>
               Already have an account?{" "}
               <button
                 onClick={() => setIsSignup(false)}
-                className="text-pink-600 font-semibold cursor-pointer"
+                className="text-[var(--color-secondary)] font-semibold cursor-pointer"
               >
                 Login
               </button>
@@ -137,7 +137,7 @@ function Login() {
               Don’t have an account?{" "}
               <button
                 onClick={() => setIsSignup(true)}
-                className="text-pink-600 font-semibold cursor-pointer"
+                className="text-[var(--color-secondary)] font-semibold cursor-pointer"
               >
                 Sign Up
               </button>
@@ -164,7 +164,7 @@ function Login() {
       </h2>
       <table className="w-full mt-4 border-collapse border">
         <thead>
-          <tr className="bg-gray-100">
+          <tr className="bg-[var(--color-text)] text-[var(--color-card)]">
             <th className="border px-4 py-2">Pet</th>
             <th className="border px-4 py-2">Service</th>
             <th className="border px-4 py-2">Date</th>
@@ -187,7 +187,7 @@ function Login() {
                   </td>
                   <td className="border px-4 py-2 text-center">
                     <span
-                      className={`px-2 py-1 rounded text-white text-center ${
+                      className={`px-2 py-1 rounded text-[var(--color-card)] text-center ${
                         b.status === "pending"
                           ? "bg-yellow-500"
                           : b.status === "completed"
@@ -205,19 +205,19 @@ function Login() {
                     <td className="border px-4 py-2 space-x-2 text-center">
                       <button
                         onClick={() => updateBookingStatus(b.id, "completed")}
-                        className="bg-green-600 text-white px-2 py-1 rounded hover:bg-green-700"
+                        className="bg-green-600 text-[var(--color-card)] px-2 py-1 rounded hover:bg-green-700"
                       >
                         Complete
                       </button>
                       <button
                         onClick={() => updateBookingStatus(b.id, "canceled")}
-                        className="bg-yellow-600 text-white px-2 py-1 rounded hover:bg-yellow-700"
+                        className="bg-yellow-600 text-[var(--color-card)] px-2 py-1 rounded hover:bg-yellow-700"
                       >
                         Cancel
                       </button>
                       <button
                         onClick={() => deleteBooking(b.id)}
-                        className="bg-red-600 text-white px-2 py-1 rounded hover:bg-red-700"
+                        className="bg-red-600 text-[var(--color-card)] px-2 py-1 rounded hover:bg-red-700"
                       >
                         Delete
                       </button>

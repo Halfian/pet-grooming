@@ -73,13 +73,13 @@ export default function BookingForm({ onBookingCreated }) {
                 
                 {/* Pet */}
                 <div>
-                    <label className="block text-gray-700 font-medium mb-2">Pet</label>
+                    <label className="block text-[var(--color-text)] font-medium mb-2">Pet</label>
                     <select
                     name="pet_id"
                     value={formData.pet_id}
                     onChange={handleChange}
                     required
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500"
+                    className="w-full border border-[var(--color-text)]/30 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
                     >
                     <option value="">Select Pet</option>
                     {Array.isArray(pets) && pets.map(p => (
@@ -90,13 +90,13 @@ export default function BookingForm({ onBookingCreated }) {
 
                 {/* Service */}
                 <div>
-                    <label className="block text-gray-700 font-medium mb-2">Service</label>
+                    <label className="block text-[var(--color-text)] font-medium mb-2">Service</label>
                     <select
                     name="service_id"
                     value={formData.service_id}
                     onChange={handleChange}
                     required
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500"
+                    className="w-full border border-[var(--color-text)]/30 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
                     >
                     <option value="">Select Service</option>
                     {Array.isArray(services) && services.map(s => (
@@ -109,21 +109,21 @@ export default function BookingForm({ onBookingCreated }) {
 
                 {/* Date */}
                 <div>
-                    <label className="block text-gray-700 font-medium mb-2">Date</label>
+                    <label className="block text-[var(--color-text)] font-medium mb-2">Date</label>
                     <input
                         type="datetime-local"
                         name="booking_date"
                         value={formData.booking_date}
                         onChange={handleChange}
                         required
-                        className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500"
+                        className="w-full border border-[var(--color-text)]/30 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
                     />
                 </div>
 
                 {/* Submit */}
                 <button
                     type="submit"
-                    className="w-full bg-pink-600 text-white font-semibold py-3 rounded-lg shadow hover:bg-pink-700 transition"
+                    className="w-full bg-[var(--color-secondary)] text-[var(--color-card)] font-semibold py-3 rounded-lg shadow hover:bg-[var(--color-accent)] transition"
                 >
                     Create Booking
                 </button>
