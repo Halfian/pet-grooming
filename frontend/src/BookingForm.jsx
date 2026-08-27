@@ -123,7 +123,9 @@ export default function BookingForm({ onBookingCreated }) {
                 {/* Submit */}
                 <button
                     type="submit"
-                    className="w-full bg-[var(--color-secondary)] text-[var(--color-card)] font-semibold py-3 rounded-lg shadow hover:bg-[var(--color-accent)] transition"
+                    className="w-full bg-gradient-to-b from-[var(--color-accent)] to-[var(--color-secondary)] 
+                            text-[var(--color-card)] font-semibold py-3 rounded-lg shadow hover:bg-gradient-to-bfrom[var(--color-secondary)] 
+                            to-[var(--color-accent)] transition duration-300"
                 >
                     Create Booking
                 </button>

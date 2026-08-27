@@ -32,7 +32,7 @@ const ServiceCard = memo(({ service, icon }) => (
       </p>
       <Link
         to="/login"
-        className="bg-[var(--color-primary)] text-[var(--color-card)] px-4 py-2 rounded-lg shadow hover:bg-[var(--color-secondary)] transition"
+        className="bg-[var(--color-secondary)] text-[var(--color-card)] px-4 py-2 rounded-lg shadow hover:bg-[var(--color-primary)] transition"
       >
         Book Now
       </Link>
@@ -62,9 +62,9 @@ export default function Services() {
   }, []);
 
   return (
-    <div className="bg-[var(--color-text)]/50 min-h-screen py-12 px-6">
+    <div className="bg-[var(--color-text)]/30 min-h-screen py-12 px-6">
       <h1 className="text-3xl font-bold text-center mb-10">Our Services</h1>
-      <p className="text-center text-[var(--color-text)] mb-12">
+      <p className="text-center text-[var(--color-card)] mb-12">
         Choose from our professional grooming options to keep your pets happy and healthy.
       </p>
 

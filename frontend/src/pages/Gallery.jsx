@@ -25,9 +25,9 @@ export default function Gallery() {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <div className="bg-[var(--color-text)]/50 min-h-screen py-12 px-6">
+    <div className="bg-[var(--color-text)]/20 min-h-screen py-12 px-6">
       <h1 className="text-3xl font-bold text-center mb-10">Our Gallery</h1>
-      <p className="text-center text-[var(--color-text)] mb-12">
+      <p className="text-center text-[var(--color-card)] mb-12">
         A glimpse of our happy customers after their grooming sessions.
       </p>
 
@@ -54,13 +54,13 @@ export default function Gallery() {
         <div className="flex justify-between mt-6">
           <button
             onClick={prevSlide}
-            className="px-2 py-1 bg-[var(--color-text)] rounded hover:bg-[var(--color-text)]/30"
+            className="px-2 py-1 bg-[var(--color-text)]/20 text-[var(--color-card)] rounded hover:bg-[var(--color-text)]/30"
           >
             Prev
           </button>
           <button
             onClick={nextSlide}
-            className="px-2 py-1 bg-[var(--color-text)] rounded hover:bg-[var(--color-text)]/30"
+            className="px-2 py-1 bg-[var(--color-text)]/20 text-[var(--color-card)] rounded hover:bg-[var(--color-text)]/30"
           >
             Next
           </button>

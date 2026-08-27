@@ -40,7 +40,7 @@ export default function Home() {
           </p>
           <Link
             to="/login"
-            className="bg-[var(--color-secondary)] text-[var(--color-text)] px-8 py-3 rounded-lg shadow hover:bg-[var(--color-accent)] transition duration-300"
+            className="bg-[var(--color-secondary)] text-[var(--color-card)] px-8 py-3 rounded-lg shadow hover:bg-[var(--color-accent)] transition duration-300"
           >
             Book Now
             <FaCat className="inline ml-2" />

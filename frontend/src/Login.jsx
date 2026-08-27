@@ -116,7 +116,7 @@ function Login() {
           </div>
           <button
             type="submit"
-            className="w-full bg-[var(--color-secondary)] text-[var(--color-card)] py-2 rounded hover:bg-pink-700"
+            className="w-full bg-[var(--color-secondary)] text-[var(--color-card)] py-2 rounded hover:bg-[var(--color-accent)]"
           >
             {isSignup ? "Sign Up" : "Login"}
           </button>
