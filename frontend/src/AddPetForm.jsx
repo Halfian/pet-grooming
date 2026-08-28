@@ -60,8 +60,8 @@ export default function AddPetForm({ onPetAdded }) {
       <button
         type="submit"
         className="w-full bg-gradient-to-b from-[var(--color-accent)] to-[var(--color-secondary)] 
-        text-[var(--color-card)] mb-5 py-2 rounded hover:bg-gradient-to-bfrom[var(--color-secondary)] 
-        to-[var(--color-accent)] transition duration-300"
+        text-[var(--color-card)] mb-5 py-2 rounded hover:bg-gradient-to-b from[var(--color-secondary)] 
+        to-[var(--color-accent)] cursor-pointer transition duration-300"
       >
         Add Pet
       </button>

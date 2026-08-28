@@ -25,7 +25,7 @@ export default function Gallery() {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <div className="bg-[var(--color-text)]/20 min-h-screen py-12 px-6">
+    <div className="bg-[var(--color-bg)] min-h-screen py-12 px-6">
       <h1 className="text-3xl font-bold text-center mb-10">Our Gallery</h1>
       <p className="text-center text-[var(--color-card)] mb-12">
         A glimpse of our happy customers after their grooming sessions.

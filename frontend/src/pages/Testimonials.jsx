@@ -19,9 +19,9 @@ export default function Testimonials() {
   ];
 
   return (
-    <div className="bg-[var(--color-text)]/20 min-h-screen py-12 px-6">
+    <div className="bg-[var(--color-text)]/10 min-h-screen py-12 px-6">
       <h1 className="text-3xl font-bold text-center mb-10">What Our Customers Say</h1>
-      <p className="text-center text-[var(--color-card)] mb-12">
+      <p className="text-center text-[var(--color-text)] mb-12">
         We’re proud to share the experiences of pet owners who trust us with their furry friends.
       </p>
 

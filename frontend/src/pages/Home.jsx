@@ -40,7 +40,7 @@ export default function Home() {
           </p>
           <Link
             to="/login"
-            className="bg-[var(--color-secondary)] text-[var(--color-card)] px-8 py-3 rounded-lg shadow hover:bg-[var(--color-accent)] transition duration-300"
+            className="bg-[var(--color-secondary)] text-[var(--color-card)] px-8 py-3 rounded-lg shadow hover:bg-[var(--color-primary)] transition duration-300"
           >
             Book Now
             <FaCat className="inline ml-2" />
@@ -74,7 +74,7 @@ export default function Home() {
         style={{ backgroundImage: "url('/images/pet1.webp')" }}
       >
         {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-[var(--color-text)]/30"></div>
+        <div className="absolute inset-0 bg-[var(--color-text)]/10"></div>
 
         <div className="relative z-10 max-w-3xl mx-auto px-6 py-12 bg-[var(--color-bg)]/70 rounded-lg shadow-lg">
           <h2 className="text-4xl font-bold text-[var(--color-secondary)] mb-6">About Us</h2>

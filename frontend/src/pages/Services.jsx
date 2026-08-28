@@ -62,7 +62,7 @@ export default function Services() {
   }, []);
 
   return (
-    <div className="bg-[var(--color-text)]/30 min-h-screen py-12 px-6">
+    <div className="bg-[var(--color-text)]/10 min-h-screen py-12 px-6">
       <h1 className="text-3xl font-bold text-center mb-10">Our Services</h1>
       <p className="text-center text-[var(--color-card)] mb-12">
         Choose from our professional grooming options to keep your pets happy and healthy.
