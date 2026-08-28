@@ -27,7 +27,7 @@ export default function Gallery() {
   return (
     <div className="bg-[var(--color-bg)] min-h-screen py-12 px-6">
       <h1 className="text-3xl font-bold text-center mb-10">Our Gallery</h1>
-      <p className="text-center text-[var(--color-card)] mb-12">
+      <p className="text-center text-[var(--color-text)] mb-12">
         A glimpse of our happy customers after their grooming sessions.
       </p>
 
