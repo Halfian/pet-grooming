@@ -19,9 +19,9 @@ export default function Testimonials() {
   ];
 
   return (
-    <div className="bg-[var(--color-text)]/10 min-h-screen py-12 px-6">
+    <div className="bg-(--color-text)/10 min-h-screen py-12 px-6">
       <h1 className="text-3xl font-bold text-center mb-10">What Our Customers Say</h1>
-      <p className="text-center text-[var(--color-text)] mb-12">
+      <p className="text-center text-(--color-text) mb-12">
         We’re proud to share the experiences of pet owners who trust us with their furry friends.
       </p>
 
@@ -29,10 +29,10 @@ export default function Testimonials() {
         {testimonials.map((t, index) => (
           <blockquote
             key={index}
-            className="bg-[var(--color-bg)] p-6 rounded-lg shadow hover:shadow-lg transition-shadow"
+            className="bg-(--color-bg) p-6 rounded-lg shadow hover:shadow-lg transition-shadow"
           >
-            <p className="text-[var(--color-text)] italic">"{t.quote}"</p>
-            <footer className="mt-4 text-sm text-[var(--color-text)]">— {t.author}</footer>
+            <p className="text-(--color-text) italic">"{t.quote}"</p>
+            <footer className="mt-4 text-sm text-(--color-text)">— {t.author}</footer>
           </blockquote>
         ))}
       </div>

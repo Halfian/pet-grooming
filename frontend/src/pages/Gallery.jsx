@@ -25,9 +25,9 @@ export default function Gallery() {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <div className="bg-[var(--color-bg)] min-h-screen py-12 px-6">
+    <div className="bg-(--color-bg) min-h-screen py-12 px-6">
       <h1 className="text-3xl font-bold text-center mb-10">Our Gallery</h1>
-      <p className="text-center text-[var(--color-text)] mb-12">
+      <p className="text-center text-(--color-text) mb-12">
         A glimpse of our happy customers after their grooming sessions.
       </p>
 
@@ -39,7 +39,7 @@ export default function Gallery() {
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {images.map((img, index) => (
-              <div key={index} className="w-full flex-shrink-0">
+              <div key={index} className="w-full shrink-0">
                 <img
                   src={img.src}
                   alt={img.alt}
@@ -54,13 +54,13 @@ export default function Gallery() {
         <div className="flex justify-between mt-6">
           <button
             onClick={prevSlide}
-            className="px-2 py-1 bg-[var(--color-text)]/20 text-[var(--color-card)] rounded hover:bg-[var(--color-text)]/30"
+            className="px-2 py-1 bg-(--color-text)/20 text-(--color-card) rounded hover:bg-(--color-text)/30"
           >
             Prev
           </button>
           <button
             onClick={nextSlide}
-            className="px-2 py-1 bg-[var(--color-text)]/20 text-[var(--color-card)] rounded hover:bg-[var(--color-text)]/30"
+            className="px-2 py-1 bg-(--color-text)/20 text-(--color-card) rounded hover:bg-(--color-text)/30"
           >
             Next
           </button>
@@ -73,7 +73,7 @@ export default function Gallery() {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-3 h-3 rounded-full ${
-                index === currentIndex ? "bg-[var(--color-text)]/80" : "bg-[var(--color-text)]/40"
+                index === currentIndex ? "bg-(--color-text)/80" : "bg-(--color-text)/40"
               }`}
             />
           ))}

@@ -1,9 +1,11 @@
 ## Pet Grooming Booking App
+
 Pet Grooming Booking App helps pet owners easily schedule grooming services online, while giving admins tools to manage bookings and customer data.
 
 ---
 
 ## ✨ Features
+
 - Role‑based authentication (customer/admin)
 - Secure login with JWT + bcrypt
 - Add pets or choose recorded pet details
@@ -23,17 +25,19 @@ Pet Grooming Booking App helps pet owners easily schedule grooming services onli
 ![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white)
 
-- **Frontend:** React, Vite, TailwindCSS, Zustand  
-- **Backend:** Node.js, Express, PostgreSQL  
-- **Auth:** JWT with bcrypt password hashing  
+- **Frontend:** React, Vite, TailwindCSS, Zustand
+- **Backend:** Node.js, Express, PostgreSQL
+- **Auth:** JWT with bcrypt password hashing
 
 ---
 
 ## Setup Instruction
+
 1. Clone the repo
    ```bash
    - git clone https://github.com/Halfian/pet-grooming.git
    - cd pet-grooming
+   ```
 2. Install dependencies
    - npm install
 3. Configure environment variable
@@ -44,25 +48,33 @@ Pet Grooming Booking App helps pet owners easily schedule grooming services onli
 ---
 
 ## Live Demo
+
 https://halfian.github.io/pet-grooming/
 
 ---
 
 ## Screenshot
+
+- Main Page
+  ![Main Page](/frontend/public/ss-hero.webp)
+  ![Main Page](/frontend/public/ss-services.webp)
+  ![Main Page](/frontend/public/ss-login.webp)
 - Admin Page
-  ![Admin Page](./screenshots/admin-dashboard.png)
+  ![Admin Page](/frontend/public/ss-admin-dashboard.webp)
 - Booking Form
-  ![Booking Form](./screenshots/customer-booking-form1.png)
-  ![Booking Form2](./screenshots/customer-booking-form2.png)
+  ![Booking Form](/frontend/public/ss-user-dashboard.webp)
+  ![Booking Form2](/frontend/public/ss-user-dashboard2.webp)
 
 ---
 
 ## Deployment
+
 Frontend hosted on GitHub Pages, backend deployed with Neon + Vercel. CI/CD via GitHub Actions.
 
 ---
 
 ## Future Improvements
+
 - Payment integration
 - Email notifications for bookings
 - Admin analytics dashboard
